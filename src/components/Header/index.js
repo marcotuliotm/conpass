@@ -1,10 +1,14 @@
 import React from 'react';
+import { Container, MainLogo, H1 } from './Styles';
+import logo from '../../images/logoConpass.png';
 
 
 function Header() {
   return (
     <header>
-      Header
+      <Container>
+        <MainLogo src={logo} /> <H1>conpass</H1>
+      </Container>
     </header>
   );
 }
