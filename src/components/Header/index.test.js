@@ -19,9 +19,5 @@ describe('<Header />', () => {
     const wrapper = mount(<Header />);
     expect(wrapper.find('img').length).toBe(1);
   });
-  it('should have text when mount', () => {
-    const wrapper = mount(<Header />);
-    expect(wrapper.find('h1').props().children).toBe('conpass');
-  });
 });
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, MainLogo, H1 } from './Styles';
-import logo from '../../images/logoConpass.png';
+import logo from 'images/logoClean.png';
+import { Container, MainLogo } from './Styles';
 
 
 function Header() {
   return (
     <header>
       <Container>
-        <MainLogo src={logo} /> <H1>conpass</H1>
+        <MainLogo src={logo} />
       </Container>
     </header>
   );
