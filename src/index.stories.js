@@ -13,5 +13,7 @@ storiesOf('<Header>', module)
   .add('full', () => <Header />);
 
 storiesOf('<UserTableContainer>', module)
-  .add('full', () => <UserTableContainer />);
+  .add('full', () => (<div className="container jumbotron">
+    <UserTableContainer />
+  </div>));
 

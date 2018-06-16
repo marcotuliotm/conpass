@@ -1,21 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-
-
-const BtnAdd = styled.div`
-  float: right;
-`;
+import { H1, BtnAdd, AAdd } from './Styles';
 
 function UserTableHeader(props) {
   const { title } = props;
   return (
     <div className="row">
       <div className="col col-md">
-        <h1>{title}</h1>
+        <H1>{title}</H1>
       </div>
       <div className="col col-md">
         <BtnAdd>
-          <a className="btn btn-primary btn-lg" href="#" role="button">Add new user</a>
+          <AAdd href="#" role="button">Add new user</AAdd>
         </BtnAdd>
       </div>
     </div>
