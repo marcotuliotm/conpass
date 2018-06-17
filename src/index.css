@@ -41,6 +41,10 @@ a {
   color: #555E5E;
 }
 
+h6{
+  color: rgb(117, 117, 128);
+}
+
 .alert {
   border: 0;
 }

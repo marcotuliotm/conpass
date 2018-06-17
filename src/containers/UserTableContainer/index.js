@@ -9,34 +9,28 @@ const data = [{
 }, {
   key: '2',
   name: 'Jim Green',
-  create: 42,
+  create: 1529274074002,
   address: 'London No. 1 Lake Park',
 }, {
   key: '3',
   name: 'Joe Black',
-  create: 32,
+  create: 1529274076002,
   address: 'Sidney No. 1 Lake Park',
 }, {
   key: '4',
   name: 'Jim Red',
-  create: 32,
+  create: 1529274075002,
   address: 'London No. 2 Lake Park',
 }];
 
 class UserTableContainer extends Component {
   state = {
-    sortedInfo: null,
+    sortedInfo: {
+      order: 'descend',
+      columnKey: 'create',
+    },
   };
 
-
-  setAgeSort = () => {
-    this.setState({
-      sortedInfo: {
-        order: 'descend',
-        columnKey: 'age',
-      },
-    });
-  }
   handleChange = (pagination, filters, sorter) => {
     this.setState({
       sortedInfo: sorter,
