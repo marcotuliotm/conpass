@@ -6,6 +6,7 @@ import Header from 'components/Header';
 import UserTableContainer from 'containers/UserTableContainer';
 import 'vendor/bootstrap-grid.min.css';
 import 'vendor/bootstrap.min.css';
+import 'antd/dist/antd.css';
 import './index.css';
 
 

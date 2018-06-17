@@ -4,15 +4,17 @@ import { H1, BtnAdd, AAdd } from './Styles';
 function UserTableHeader(props) {
   const { title } = props;
   return (
-    <div className="row">
-      <div className="col col-md">
+    <div className="row justify-content-center">
+
+      <div className="col-5">
         <H1>{title}</H1>
       </div>
-      <div className="col col-md">
+      <div className="col-5">
         <BtnAdd>
           <AAdd href="#" role="button">Add new user</AAdd>
         </BtnAdd>
       </div>
+
     </div>
   );
 }

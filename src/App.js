@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <div className="container jumbotron">
+        <div className="container-fluid jumbotron">
           <UserTableContainer />
         </div>
 

@@ -9,7 +9,31 @@ body.darkBg {
 a {
   color: #0D888C;
 }
-
+.ant-table-thead > tr > th {
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: background .3s ease;
+  -o-transition: background .3s ease;
+  transition: background .3s ease;
+  text-align: left;
+  color: #0D888C;
+  font-weight: bold;
+  border-bottom: 1px solid #e8e8e8;
+}
+.ant-table-column-sorter-down.off .anticon-caret-down {
+  color: rgba(0, 0, 0, 0);
+}
+.ant-table-column-sorter-down.on .anticon-caret-down {
+  color: #0D888C;
+}
+.ant-table-column-sorter-up.off .anticon-caret-up {
+  color: rgba(0, 0, 0, 0);
+}
+.ant-table-column-sorter-up.on .anticon-caret-up {
+  color: #0D888C;
+}
+.ant-table-thead > tr > th.ant-table-column-sort {
+  background: rgba(0, 0, 0, 0);
+}
 .display-4 {
   font-size: 2.0rem;
   margin-bottom: 30px;
