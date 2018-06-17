@@ -13,14 +13,15 @@ function UserTable(props) {
     key: 'name',
     sorter: (a, b) => a.name.length - b.name.length,
     sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
-    render: (text) => (<div>
+    render: (name) => (<div>
       <Avatar
         round
-        name={text}
+        name={name.text}
         color="#d2d3d5"
         size="50px"
+        src={name.avatar}
         fgColor="#555E5E"
-      />{` ${text}`}</div>),
+      />{` ${name.text}`}</div>),
   }, {
     title: 'Created at',
     dataIndex: 'create',
