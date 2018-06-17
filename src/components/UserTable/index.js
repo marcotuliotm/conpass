@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'antd';
 import moment from 'moment';
+import Avatar from 'react-avatar';
 
 
 function UserTable(props) {
@@ -12,7 +13,14 @@ function UserTable(props) {
     key: 'name',
     sorter: (a, b) => a.name.length - b.name.length,
     sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
-    render: (text) => <a href="#">{text}</a>,
+    render: (text) => (<div>
+      <Avatar
+        round
+        name={text}
+        color="#d2d3d5"
+        size="50px"
+        fgColor="#555E5E"
+      />{` ${text}`}</div>),
   }, {
     title: 'Created at',
     dataIndex: 'create',
