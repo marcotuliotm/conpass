@@ -1,11 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router';
 
 import { storiesOf } from '@storybook/react';
 import configureStore from 'redux-mock-store';
 
 import Header from 'components/Header';
 import UserTableContainer from 'containers/UserTableContainer';
+import UserFormContainer from 'containers/UserFormContainer';
 import 'vendor/bootstrap-grid.min.css';
 import 'vendor/bootstrap.min.css';
 import 'antd/dist/antd.css';
@@ -64,14 +66,29 @@ storiesOf('<Header>', module)
   .add('full', () => <Header />);
 
 storiesOf('<UserTableContainer> with data', module)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+  ))
   .addDecorator((story) => <Provider store={store}>{story()}</Provider>)
   .add('full', () => (<div className="container jumbotron">
     <UserTableContainer />
   </div>));
 
 storiesOf('<UserTableContainer> with no data', module)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+  ))
   .addDecorator((story) => <Provider store={storeEmpty}>{story()}</Provider>)
   .add('full', () => (<div className="container jumbotron">
     <UserTableContainer />
+  </div>));
+
+storiesOf('<UserFormContainer> with data', module)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/new']}>{story()}</MemoryRouter>
+  ))
+  .addDecorator((story) => <Provider store={store}>{story()}</Provider>)
+  .add('full', () => (<div className="container jumbotron">
+    <UserFormContainer />
   </div>));
 

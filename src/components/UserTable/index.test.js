@@ -58,7 +58,11 @@ describe('<UserTable />', () => {
   it('should have Created at column when mount', () => {
     expect(wrapper.find('.ant-table-column-has-filters').at(1).props().children.props.children[0]).toEqual('Created at');
   });
-  const wrapperData = mount(<UserTable data={store.users.data} />);
+  const sortedInfo = {
+    order: 'descend',
+    columnKey: 'create',
+  };
+  const wrapperData = mount(<UserTable sortedInfo={sortedInfo} data={store.users.data} />);
   it('with 4 to data  when mount', () => {
     expect(wrapperData.find('.sb-avatar')).toHaveLength(4);
   });
@@ -69,7 +73,7 @@ describe('<UserTable />', () => {
     expect(wrapperData.find('.sb-avatar__image')).toHaveLength(1);
   });
   it('order desc by create at when mount', () => {
-    expect(wrapperData.find('h6').at(3).props().children).toEqual('17 Jun, 2018, 7:21');
+    expect(wrapperData.find('h6').at(0).props().children).toEqual('17 Jun, 2018, 7:21');
   });
 });
 

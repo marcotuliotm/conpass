@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-
+import { NavLink } from 'react-router-dom';
 
 export const BtnAdd = styled.div`
   float: right;
 `;
 
-export const AAdd = styled.a.attrs({
+export const AAdd = styled(NavLink).attrs({
   className: 'btn btn-primary ',
 })`
   font-weight: bold !important;

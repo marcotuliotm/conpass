@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import UserTableHeader from 'components/UserTableHeader';
@@ -18,7 +19,11 @@ describe('<UserTableContainer />', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = mount(<Provider store={store}><UserTableContainer /></Provider>);
+    wrapper = mount(<Provider store={store}>
+      <MemoryRouter initialEntries={['/']}>
+        <UserTableContainer />
+      </MemoryRouter>
+    </Provider>);
   });
 
   it('UserTableContainer should be defined', () => {

@@ -11,7 +11,7 @@ function UserTableHeader(props) {
       </div>
       <div className="col-5">
         <BtnAdd>
-          <AAdd href="#" role="button">Add new user</AAdd>
+          <AAdd to="/new" role="button">Add new user</AAdd>
         </BtnAdd>
       </div>
 
