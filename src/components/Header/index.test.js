@@ -10,11 +10,11 @@ describe('<Header />', () => {
   });
   it('should have header tag when mount', () => {
     const wrapper = shallow(<Header />);
-    expect(wrapper.find('header').length).toBe(1);
+    expect(wrapper.find('header')).toHaveLength(1);
   });
   it('should have image tag when mount', () => {
     const wrapper = mount(<Header />);
-    expect(wrapper.find('img').length).toBe(1);
+    expect(wrapper.find('img')).toHaveLength(1);
   });
 });
 

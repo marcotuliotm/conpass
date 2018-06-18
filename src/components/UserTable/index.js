@@ -29,7 +29,7 @@ function UserTable(props) {
     width: 180,
     sorter: (a, b) => a.create - b.create,
     sortOrder: sortedInfo.columnKey === 'create' && sortedInfo.order,
-    render: (timemilli) => <h6>{moment(timemilli).format(' D MMM, YYYY, h:mm')}</h6>,
+    render: (timemilli) => <h6>{moment(timemilli).format('D MMM, YYYY, h:mm')}</h6>,
   }];
 
   return (
