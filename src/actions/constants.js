@@ -1,0 +1,9 @@
+// redux actions
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const REQUEST_USER = 'REQUEST_USER';
+export const ERROR_USER = 'ERROR_USER';
+export const EDIT_USER_SUCCESS = 'EDIT_USER_SUCCESS';
+export const EDIT_RG_SUCCESS = 'EDIT_RG_SUCCESS';
+export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
+export const GET_ALL_USERS_SUCCESS = 'GET_ALL_USERS_SUCCESS';
+
