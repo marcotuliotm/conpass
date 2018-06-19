@@ -48,6 +48,13 @@ O objetivo deste desafio é criar um formulário de cadastro de usuário e uma l
 # Requisitos cumpridos
 - Todos o requisitos foram cumpridos
 
+# Deploy
+
+- O projeto foi hospedado em https://conpasstdd.herokuapp.com/ 
+- Ocorre deploy sempre que ocorrer commit ou push na master.
+
+
+
 # Cobretura dos testes
 
 File                                |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
@@ -102,7 +109,7 @@ All files                           |    33.63 |    24.14 |    32.39 |    42.37 
 - criar mais historias (storybook)
 - melhorar estilos e o layout
 
-# Estrutura
+# Estrutura do projeto, comandos de inicialização, build e testes:
 
 ## Table of Contents
 
