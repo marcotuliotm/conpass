@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BtnAdd, AAdd, Button } from './Styles';
 
 function UserFormHeader(props) {
@@ -19,5 +20,9 @@ function UserFormHeader(props) {
     </div>
   );
 }
+
+UserFormHeader.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 export default UserFormHeader;

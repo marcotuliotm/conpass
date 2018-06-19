@@ -45,7 +45,7 @@ describe('<UserTable />', () => {
   it('UserTable should be defined', () => {
     expect(UserTable).toBeDefined();
   });
-  const wrapper = mount(<UserTable />);
+  const wrapper = mount(<UserTable data={[]} handleChange={jest.fn()} />);
   it('should have table when mount', () => {
     expect(wrapper.find('table')).toHaveLength(1);
   });
@@ -62,7 +62,7 @@ describe('<UserTable />', () => {
     order: 'descend',
     columnKey: 'create',
   };
-  const wrapperData = mount(<UserTable sortedInfo={sortedInfo} data={store.users.data} />);
+  const wrapperData = mount(<UserTable sortedInfo={sortedInfo} data={store.users.data} handleChange={jest.fn()} />);
   it('with 4 to data  when mount', () => {
     expect(wrapperData.find('.sb-avatar')).toHaveLength(4);
   });
@@ -74,6 +74,14 @@ describe('<UserTable />', () => {
   });
   it('order desc by create at when mount', () => {
     expect(wrapperData.find('h6').at(0).props().children).toEqual('17 Jun, 2018, 7:21');
+  });
+  it('order asc by create at when mount', () => {
+    const sortedAscCreat = {
+      order: 'ascend',
+      columnKey: 'create',
+    };
+    const wrapperAscCreate = mount(<UserTable sortedInfo={sortedAscCreat} data={store.users.data} handleChange={jest.fn()} />);
+    expect(wrapperAscCreate.find('h6').at(0).props().children).toEqual('14 Dec, 2008, 3:01');
   });
 });
 

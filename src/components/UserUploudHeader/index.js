@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function UserFormHeader(props) {
+
+function UserUploudHeader(props) {
   const { title } = props;
   return (
     <div className="row justify-content-center">
@@ -8,5 +10,8 @@ function UserFormHeader(props) {
     </div>
   );
 }
+UserUploudHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
-export default UserFormHeader;
+export default UserUploudHeader;
