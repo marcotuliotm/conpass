@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import UserFormHeader from 'components/UserFormHeader';
 import UserForm from 'components/UserForm';
 
@@ -10,12 +9,15 @@ class UserFormContainer extends Component {
     formRef: {},
   };
 
-  onKeyDown=() => {
+  onChange=() => {
     const { formRef } = this.state;
     formRef.validateAll(formRef.getValues(), true).then((res) => this.setState({ disabled: !res.isValid }));
   }
 
-  onValidSubmit=(event, userRegister) => console.log(userRegister);
+  onValidSubmit=(event, userRegister) => {
+    window.localStorage.setItem('USER', JSON.stringify(userRegister));
+    this.props.pushUploud();
+  }
 
   setFormRef= (formRef) => {
     this.setState({ formRef });
@@ -26,23 +28,12 @@ class UserFormContainer extends Component {
     return (
       <div>
         <UserFormHeader title="Register" />
-        <UserForm onValidSubmit={this.onValidSubmit} disabled={disabled} setFormRef={this.setFormRef} onChange={this.onKeyDown} />
+        <UserForm onValidSubmit={this.onValidSubmit} disabled={disabled} setFormRef={this.setFormRef} onChange={this.onChange} />
       </div>
     );
   }
 }
 
-function mapStateToProps({
-  users,
-}) {
-  return {
-    users,
-  };
-}
 
-
-export default connect(
-  mapStateToProps,
-  null,
-)(UserFormContainer);
+export default UserFormContainer;
 

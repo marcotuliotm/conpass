@@ -25,7 +25,10 @@ class App extends Component {
             <Route
               exact
               path="/new"
-              component={UserFormContainer}
+              render={({ history }) => {
+                const pushUploud = () => history.push('/uploud');
+                return (<UserFormContainer pushUploud={pushUploud} />);
+              }}
             />
           </Switch>
         </div>

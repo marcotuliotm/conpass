@@ -87,7 +87,6 @@ storiesOf('<UserFormContainer> with data', module)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={['/new']}>{story()}</MemoryRouter>
   ))
-  .addDecorator((story) => <Provider store={store}>{story()}</Provider>)
   .add('full', () => (<div className="container jumbotron">
     <UserFormContainer />
   </div>));
