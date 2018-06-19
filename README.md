@@ -50,6 +50,50 @@ O objetivo deste desafio é criar um formulário de cadastro de usuário e uma l
 
 # Cobretura dos testes
 
+File                                |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+------------------------------------|----------|----------|----------|----------|-------------------|
+All files                           |    33.63 |    24.14 |    32.39 |    42.37 |                   |
+ src                                |     1.85 |        0 |     2.94 |     2.82 |                   |
+  App.js                            |    14.29 |      100 |       20 |       20 |       30,31,37,38 |
+  index.js                          |        0 |        0 |        0 |        0 |... 13,15,17,22,31 |
+  index.stories.js                  |        0 |        0 |        0 |        0 |... 1,95,96,98,100 |
+  registerServiceWorker.js          |        0 |        0 |        0 |        0 |... 36,137,138,139 |
+  setupTests.js                     |      100 |      100 |      100 |      100 |                   |
+ src/actions                        |    56.25 |      100 |        0 |    64.29 |                   |
+  constants.js                      |      100 |      100 |      100 |      100 |                   |
+  user.js                           |    22.22 |      100 |        0 |    28.57 |    16,17,18,19,20 |
+ src/components/Header              |      100 |      100 |      100 |      100 |                   |
+  Styles.js                         |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |      100 |      100 |      100 |                   |
+ src/components/UserForm            |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |      100 |      100 |      100 |                   |
+ src/components/UserFormHeader      |    94.12 |     87.5 |      100 |    94.12 |                   |
+  Styles.js                         |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |      100 |      100 |      100 |                   |
+  step.js                           |    91.67 |     87.5 |      100 |    91.67 |                13 |
+ src/components/UserTable           |       90 |    83.33 |       80 |       90 |                   |
+  index.js                          |       90 |    83.33 |       80 |       90 |                16 |
+ src/components/UserTableHeader     |      100 |      100 |      100 |      100 |                   |
+  Styles.js                         |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |      100 |      100 |      100 |                   |
+ src/components/UserUploud          |      100 |       50 |      100 |      100 |                   |
+  Styles.js                         |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |       50 |      100 |      100 |                11 |
+ src/components/UserUploudFooter    |      100 |      100 |      100 |      100 |                   |
+  Styles.js                         |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |      100 |      100 |      100 |                   |
+ src/components/UserUploudHeader    |      100 |      100 |      100 |      100 |                   |
+  index.js                          |      100 |      100 |      100 |      100 |                   |
+ src/containers/UserFormContainer   |    45.45 |       50 |       50 |       50 |                   |
+  index.js                          |    45.45 |       50 |       50 |       50 |    21,26,27,31,32 |
+ src/containers/UserTableContainer  |    66.67 |      100 |    66.67 |    66.67 |                   |
+  index.js                          |    66.67 |      100 |    66.67 |    66.67 |                18 |
+ src/containers/UserUploudContainer |       25 |      100 |       40 |       25 |                   |
+  index.js                          |       25 |      100 |       40 |       25 |... 25,26,27,31,48 |
+ src/reducers                       |        0 |        0 |        0 |        0 |                   |
+  index.js                          |        0 |        0 |        0 |        0 |               1,2 |
+  users.js                          |        0 |        0 |        0 |        0 |... 12,14,23,28,30 |
+------------------------------------|----------|----------|----------|----------|-------------------|
 
 
 # Melhorias 
