@@ -2,9 +2,7 @@
     "compilerOptions": {
         
         "allowJs": true,
-        // This must be specified if "paths" is set
         "baseUrl": ".",
-        // Relative to "baseUrl"
         "paths": {
         "*": [
             "*",
