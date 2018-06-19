@@ -8,6 +8,7 @@ import configureStore from 'redux-mock-store';
 import Header from 'components/Header';
 import UserTableContainer from 'containers/UserTableContainer';
 import UserFormContainer from 'containers/UserFormContainer';
+import UserUploudContainer from 'containers/UserUploudContainer';
 import 'vendor/bootstrap-grid.min.css';
 import 'vendor/bootstrap.min.css';
 import 'antd/dist/antd.css';
@@ -89,5 +90,13 @@ storiesOf('<UserFormContainer> with data', module)
   ))
   .add('full', () => (<div className="container jumbotron">
     <UserFormContainer />
+  </div>));
+
+storiesOf('<UserUploudContainer> with data', module)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/uploud']}>{story()}</MemoryRouter>
+  ))
+  .add('full', () => (<div className="container jumbotron">
+    <UserUploudContainer />
   </div>));
 

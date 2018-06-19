@@ -2,6 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import UserFormHeader from 'components/UserFormHeader';
+import UserForm from 'components/UserForm';
 import UserFormContainer from './index';
 
 
@@ -21,6 +22,9 @@ describe('<UserFormContainer />', () => {
   });
   it('should have UserFormHeader tag when mount', () => {
     expect(wrapper.find(UserFormHeader).length).toEqual(1);
+  });
+  it('should have UserForm tag when mount', () => {
+    expect(wrapper.find(UserForm).length).toEqual(1);
   });
 });
 

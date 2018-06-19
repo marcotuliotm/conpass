@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from 'components/Header';
 import UserTableContainer from 'containers/UserTableContainer';
 import UserFormContainer from 'containers/UserFormContainer';
+import UserUploudContainer from 'containers/UserUploudContainer';
 
 import './App.css';
 
@@ -28,6 +29,13 @@ class App extends Component {
               render={({ history }) => {
                 const pushUploud = () => history.push('/uploud');
                 return (<UserFormContainer pushUploud={pushUploud} />);
+              }}
+            />
+            <Route
+              path="/uploud"
+              render={({ history }) => {
+                const pushUploud = () => history.push('/uploud');
+                return (<UserUploudContainer pushUploud={pushUploud} />);
               }}
             />
           </Switch>
