@@ -2,7 +2,7 @@ import React from 'react';
 import { BtnAdd, AAdd, Button } from './Styles';
 
 function UserFormHeader(props) {
-  const { handleSumit } = props;
+  const { handleSubmit } = props;
   const buttonTitle = 'FINISHI >';
   const linkTitle = '< Back';
   return (
@@ -13,7 +13,7 @@ function UserFormHeader(props) {
         </BtnAdd>
       </div>
       <div className="col-2">
-        <Button onClick={handleSumit}>{buttonTitle}</Button>
+        <Button onClick={handleSubmit}>{buttonTitle}</Button>
       </div>
       <div className="col-4" />
     </div>

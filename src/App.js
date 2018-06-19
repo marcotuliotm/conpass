@@ -34,8 +34,8 @@ class App extends Component {
             <Route
               path="/uploud"
               render={({ history }) => {
-                const pushUploud = () => history.push('/uploud');
-                return (<UserUploudContainer pushUploud={pushUploud} />);
+                const pushTable = () => history.push('/');
+                return (<UserUploudContainer pushTable={pushTable} />);
               }}
             />
           </Switch>

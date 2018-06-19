@@ -15,6 +15,7 @@ const requestUser = () => ({
 export class UserAction {
   static saveUser = (user) => (dispatch) => {
     dispatch(requestUser());
+    window.localStorage.removeItem('USER');
     setTimeout(() => {
       dispatch(saveUserSuccess(user));
     }, 100);

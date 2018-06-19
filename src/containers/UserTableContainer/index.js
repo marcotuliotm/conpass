@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import UserTableHeader from 'components/UserTableHeader';
 import UserTable from 'components/UserTable';
 
@@ -11,6 +12,7 @@ class UserTableContainer extends Component {
       columnKey: 'create',
     },
   };
+
 
   handleChange = (pagination, filters, sorter) => {
     this.setState({
@@ -37,8 +39,8 @@ function mapStateToProps({
 }
 
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   null,
-)(UserTableContainer);
+)(UserTableContainer));
 

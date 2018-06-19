@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import UserUploudHeader from 'components/UserUploudHeader';
 import UserUploud from 'components/UserUploud';
 import UserUploudFooter from 'components/UserUploudFooter';
+
+import { UserAction } from 'actions/user';
 
 
 class UserUploudContainer extends Component {
@@ -9,14 +14,17 @@ class UserUploudContainer extends Component {
     src: '',
   };
 
-  onChange=() => {
-    const { formRef } = this.state;
-    formRef.validateAll(formRef.getValues(), true).then((res) => this.setState({ disabled: !res.isValid }));
-  }
-
-  onSubmit=() => {
-    // // window.localStorage.setItem('USER', JSON.stringify(userRegister));
-    // this.props.pushUploud();
+  handleSubmit=() => {
+    const { src } = this.state;
+    const userStorage = JSON.parse(window.localStorage.getItem('USER'));
+    userStorage.avatar = {
+      name: `${userStorage.firstName} ${userStorage.lastName}`,
+      src,
+    };
+    userStorage.create = Date.now();
+    userStorage.key = Date.now();
+    this.props.createUser(userStorage);
+    this.props.pushTable();
   }
 
   handleFiles= (file) => {
@@ -29,12 +37,20 @@ class UserUploudContainer extends Component {
       <div>
         <UserUploudHeader title="Profile photo" />
         <UserUploud handleFiles={this.handleFiles} src={src} />
-        <UserUploudFooter />
+        <UserUploudFooter handleSubmit={this.handleSubmit} />
       </div>
     );
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    createUser: (data) => dispatch(UserAction.saveUser(data)),
+  };
+}
 
-export default UserUploudContainer;
+export default withRouter(connect(
+  null,
+  mapDispatchToProps,
+)(UserUploudContainer));
 
