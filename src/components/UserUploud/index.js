@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactFileReader from 'react-file-reader';
 import { Container, ButtonImage, Image } from './Styles';
 
@@ -18,5 +19,10 @@ function UserUploud(props) {
     </div>
   );
 }
+
+UserUploud.propTypes = {
+  handleFiles: PropTypes.func.isRequired,
+  src: PropTypes.string,
+};
 
 export default UserUploud;

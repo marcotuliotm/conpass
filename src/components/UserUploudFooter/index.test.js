@@ -9,7 +9,7 @@ describe('<UserUploudFooter />', () => {
   });
   const wrapper = mount(
     <MemoryRouter initialEntries={['/uploud']}>
-      <UserUploudFooter title="conpass" />
+      <UserUploudFooter handleSubmit={jest.fn()} />
     </MemoryRouter>
   );
 

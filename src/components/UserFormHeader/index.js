@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Step from './step';
 import { H1, Container } from './Styles';
 
@@ -32,5 +33,9 @@ function UserFormHeader(props) {
     </div>
   );
 }
+
+UserFormHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default UserFormHeader;

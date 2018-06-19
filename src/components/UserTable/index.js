@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Table } from 'antd';
 import moment from 'moment';
 import Avatar from 'react-avatar';
 
 
 function UserTable(props) {
+  const { data, handleChange } = props;
   let { sortedInfo } = props;
   sortedInfo = sortedInfo || {};
   const columns = [{
@@ -35,10 +37,16 @@ function UserTable(props) {
   return (
     <div className="row align-items-center justify-content-center">
       <div className="col-10">
-        <Table columns={columns} dataSource={props.data} onChange={props.handleChange} pagination={false} />
+        <Table columns={columns} dataSource={data} onChange={handleChange} pagination={false} />
       </div>
     </div>
   );
 }
+
+UserTable.propTypes = {
+  data: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  sortedInfo: PropTypes.object,
+};
 
 export default UserTable;
