@@ -8,6 +8,7 @@ import configureStore from 'redux-mock-store';
 import Header from 'components/Header';
 import UserTableContainer from 'containers/UserTableContainer';
 import UserFormContainer from 'containers/UserFormContainer';
+import UserUploudContainer from 'containers/UserUploudContainer';
 import 'vendor/bootstrap-grid.min.css';
 import 'vendor/bootstrap.min.css';
 import 'antd/dist/antd.css';
@@ -19,33 +20,33 @@ const store = mockStore({
   users: {
     data: [{
       key: '1',
-      name: {
-        text: 'John Brown',
-        avatar: '',
+      avatar: {
+        name: 'John Brown',
+        src: '',
       },
       create: 1229274074002,
       address: 'New York No. 1 Lake Park',
     }, {
       key: '2',
-      name: {
-        text: 'Jim Green',
-        avatar: 'http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3',
+      avatar: {
+        name: 'Jim Green',
+        src: 'http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3',
       },
       create: 1529274074002,
       address: 'London No. 1 Lake Park',
     }, {
       key: '3',
-      name: {
-        text: 'Moe Black',
-        avatar: '',
+      avatar: {
+        name: 'Moe Black',
+        src: '',
       },
       create: 1329274076002,
       address: 'Sidney No. 1 Lake Park',
     }, {
       key: '4',
-      name: {
-        text: 'Jim Red',
-        avatar: '',
+      avatar: {
+        name: 'Jim Red',
+        src: '',
       },
       create: 1529274075002,
       address: 'London No. 2 Lake Park',
@@ -89,5 +90,14 @@ storiesOf('<UserFormContainer> with data', module)
   ))
   .add('full', () => (<div className="container jumbotron">
     <UserFormContainer />
+  </div>));
+
+storiesOf('<UserUploudContainer> with data', module)
+  .addDecorator((story) => <Provider store={storeEmpty}>{story()}</Provider>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/uploud']}>{story()}</MemoryRouter>
+  ))
+  .add('full', () => (<div className="container jumbotron">
+    <UserUploudContainer />
   </div>));
 

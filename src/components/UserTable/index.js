@@ -9,19 +9,19 @@ function UserTable(props) {
   sortedInfo = sortedInfo || {};
   const columns = [{
     title: 'Full Name',
-    dataIndex: 'name',
-    key: 'name',
-    sorter: (a, b) => a.name.length - b.name.length,
-    sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
-    render: (name) => (<div>
+    dataIndex: 'avatar',
+    key: 'avatar.name',
+    sorter: (a, b) => a.avatar.name.length - b.avatar.name.length,
+    sortOrder: sortedInfo.columnKey === 'avatar' && sortedInfo.order,
+    render: (avatar) => (<div>
       <Avatar
         round
-        name={name.text}
+        name={avatar.name}
         color="#d2d3d5"
         size="50px"
-        src={name.avatar}
+        src={avatar.src}
         fgColor="#555E5E"
-      />{` ${name.text}`}</div>),
+      />{` ${avatar.name}`}</div>),
   }, {
     title: 'Created at',
     dataIndex: 'create',

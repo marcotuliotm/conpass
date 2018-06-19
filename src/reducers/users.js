@@ -14,7 +14,7 @@ const users = (state = defaultState, action) => {
       return {
         ...state,
         data: [
-          ...state,
+          ...state.data,
           action.user,
         ],
         load: false,

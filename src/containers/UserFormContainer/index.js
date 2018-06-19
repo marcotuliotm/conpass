@@ -7,7 +7,20 @@ class UserFormContainer extends Component {
   state = {
     disabled: true,
     formRef: {},
+    companyName: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    password: '',
+    repeat: '',
   };
+
+  componentWillMount() {
+    const userStorage = JSON.parse(window.localStorage.getItem('USER'));
+    if (userStorage) {
+      this.setState({ ...userStorage, disabled: false });
+    }
+  }
 
   onChange=() => {
     const { formRef } = this.state;
@@ -24,11 +37,22 @@ class UserFormContainer extends Component {
   }
 
   render() {
-    const { disabled } = this.state;
+    const { disabled, companyName, email, firstName, lastName, password, repeat } = this.state;
     return (
       <div>
         <UserFormHeader title="Register" />
-        <UserForm onValidSubmit={this.onValidSubmit} disabled={disabled} setFormRef={this.setFormRef} onChange={this.onChange} />
+        <UserForm
+          onValidSubmit={this.onValidSubmit}
+          disabled={disabled}
+          setFormRef={this.setFormRef}
+          onChange={this.onChange}
+          companyName={companyName}
+          email={email}
+          firstName={firstName}
+          lastName={lastName}
+          password={password}
+          repeat={repeat}
+        />
       </div>
     );
   }
