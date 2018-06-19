@@ -1,19 +1,20 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import UserUploudHeader from './index';
+import ReactFileReader from 'react-file-reader';
+import UserUploud from './index';
 
 describe('<UserUploudHeader />', () => {
   it('UserUploudHeader should be defined', () => {
-    expect(UserUploudHeader).toBeDefined();
+    expect(UserUploud).toBeDefined();
   });
   const wrapper = mount(
     <MemoryRouter initialEntries={['/uploud']}>
-      <UserUploudHeader title="conpass" />
+      <UserUploud handleFiles={jest.fn()} />
     </MemoryRouter>
   );
 
-  it('should have title when mount', () => {
-    expect(wrapper.find('h1').props().children).toBe('conpass');
+  it('should have ReactFileReader when mount', () => {
+    expect(wrapper.find(ReactFileReader)).toHaveLength(1);
   });
 });

@@ -93,6 +93,7 @@ storiesOf('<UserFormContainer> with data', module)
   </div>));
 
 storiesOf('<UserUploudContainer> with data', module)
+  .addDecorator((story) => <Provider store={storeEmpty}>{story()}</Provider>)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={['/uploud']}>{story()}</MemoryRouter>
   ))
